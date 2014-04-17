@@ -73,4 +73,4 @@ def about(request):
     #
     # args = {"about": the_about_post}
     # # return render(request, '../templates/about.html', args)
-    return render_to_response(request, '404.html', {})
+    return render_to_response('about.html', {})

@@ -21,7 +21,7 @@ def show_post(request, pid):
 	post.save()
 	tags = post.tags.all()
 
-	return render_to_response('page.html', {
+	return render_to_response('page.html', {  #TODO
 		'page': post,
 		'footer': True,
 		'sharing': True,
