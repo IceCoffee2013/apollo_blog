@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-# yc@2011/08/27
 
 import markdown, re
 from django import forms
