@@ -1,5 +1,4 @@
 # coding: utf-8
-# author: yc@/2011/8/26
 
 import markdown
 from django.db import models

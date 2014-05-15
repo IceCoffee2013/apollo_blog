@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-# yc@2011/08/31
 
 from models import Post
 from django.conf import settings

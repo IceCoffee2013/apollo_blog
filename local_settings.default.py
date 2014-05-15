@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-# yc@2011/08/26
 
 import os
 
@@ -11,7 +10,7 @@ TIME_ZONE = 'Asia/Shanghai'
 LANGUAGE_CODE = 'zh-cn'
 
 # 邮箱（报错时发送）
-EMAIL = 'iyanchuan@gmail.com'
+EMAIL = 'Ruan.yuji@gmail.com'
 
 # 数据库信息
 DATABASES = {
@@ -29,13 +28,13 @@ DATABASES = {
 THEME = 'classic'
 
 # 站点名称
-SITE_TITLE = 'ichuan.net'
+SITE_TITLE = 'apollorescue.com'
 # 副标题
 SITE_SUBTITLE = u'All about yc'
 # 作者
-SITE_AUTHOR = 'yc'
+SITE_AUTHOR = 'langley'
 # 描述
-SITE_DESC = 'yc\'s personal site'
+SITE_DESC = 'langley\'s personal site'
 
 # 分页大小
 PER_PAGE = 5
@@ -49,7 +48,7 @@ GA_ID = 'UA-15372596-1'
 CSE_ID = '017823656936221718810:8oexw_fkbz0'
 
 # disqus 评论 id
-DISQUS_SHORTNAME = 'ycsblog'
+DISQUS_SHORTNAME = 'apollo\'s blog'
 
 
 #### 以下配置不要改动 ####

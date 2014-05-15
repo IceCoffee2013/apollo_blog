@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-# yc@2011/08/26
 
 import os
 
@@ -49,7 +48,7 @@ GA_ID = 'UA-15372596-1'
 CSE_ID = '017823656936221718810:8oexw_fkbz0'
 
 # disqus 评论 id
-DISQUS_SHORTNAME = 'ycsblog'
+DISQUS_SHORTNAME = 'apollo\'s blog'
 
 
 #### 以下配置不要改动 ####
