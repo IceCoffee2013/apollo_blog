@@ -1,8 +1,7 @@
 
 apollo_blog
 ======
-采用 `Django + MySQL`搭建
-博客内容采用markdown
+采用 `Django + MySQL`搭建，博客内容采用markdown
 
 
 ### TODO
