@@ -1,54 +1,140 @@
-{% extends "base.html" %}
+{% extends "base1.html" %}
 {% load helper %}
+{% load static %}
 
-{% block title %}{{ title|default:"Home"}} - {% endblock %}
+{% block title %}{{ title|default:"Home" }} - {% endblock %}
 
 {% block content %}
-<div class="blog-index">
-{% for post in posts.object_list %}
-  <article>
-    <header>
-        <h1 class="entry-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
-        <p class="meta">
-      	<time datetime="{{ post.created_at|date:"Y-m-d H:i:s O" }}" pubdate>{{ post.created_at }}</time>
-        </p>
-		{% if settings.DISQUS_SHORTNAME %}
-        <p class="comment-count"><a href="{{ post.get_absolute_url }}#disqus_thread" rel="full-article"></a></p>
-		{% endif %}
-    </header>
-    <div class="entry-content">{{ post.content|safe }}</div>
-    <footer>
-      <a rel="full-article" href="{{ post.get_absolute_url }}">Read On</a>
-    </footer>
-  </article>
-{% endfor %}
-<nav role="pagination">
-  <div>
-    {% if posts.has_next %}
-      <a class="prev" href="?page={{ posts.next_page_number }}">&larr; Older</a>
-    {% endif %}
-    <a href="/archives">Blog Archives</a>
-    {% if posts.has_previous %}
-    <a class="next" href="?page={{ posts.previous_page_number }}">Newer &rarr;</a>
-    {% endif %}
-  </div>
-</nav>
-</div>
-{% if settings.DISQUS_SHORTNAME %}
-<script type="text/javascript">
-    var disqus_shortname = '{{ settings.DISQUS_SHORTNAME }}';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
-{% endif %}
-{% endblock %}
+    <!-- Post 开头 -->
+    <article class="is-post is-post-excerpt">
+        <header>
+            <!--
+                Note: Titles and bylines will wrap automatically when necessary, so don't worry
+                if they get too long. You can also remove the "byline" span entirely if you don't
+                need a byline.
+            -->
+            <h2><a href="#">Welcome to Apollo-Rescue</a></h2>
+{#            <span class="byline" style="float:right; "> A young Team work for RCRSS From NJUPT!</span>#}
+        </header>
+        <div class="info">
+            <!--
+                Note: The date should be formatted exactly as it's shown below. In particular, the
+                "least significant" characters of the month should be encapsulated in a <span>
+                element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+                Oh, and if you don't need a date for a particular page or post you can simply delete
+                the entire "date" element.
 
-{% block sidebar %}
-  {% get_recent_posts 5 %}
-  {% get_top_tags 20 %}
-  {% get_links 20 %}
+            -->
+            <span class="date">
+                <span class="month">Jan<span>uary</span></span> <span class="day">14</span><span
+                    class="year">, 2013</span></span>
+            <!--
+                Note: You can change the number of list items in "stats" to whatever you want.
+            -->
+            <ul class="stats">
+                <li><a href="#" class="link-icon24 link-icon24-1">16</a></li>
+                <li><a href="#" class="link-icon24 link-icon24-2">32</a></li>
+                <li><a href="#" class="link-icon24 link-icon24-3">64</a></li>
+                <li><a href="#" class="link-icon24 link-icon24-4">128</a></li>
+            </ul>
+        </div>
+        <a href="#" class="image image-full"><img src="{% static 'images/n33-robot-invader.jpg' %}" alt=""/></a>
+
+        <p>
+            <strong>Disaster rescue</strong> is one of the most serious social issue which involves very large
+            numbers of heterogeneous agents in the hostile environment. </p>
+
+        <p> The intention of the RoboCupRescue project is to
+            promote research and development in this socially significant domain at various levels involving multi-agent
+            team work coordination, physical robotic agents for search and rescue, information infrastructures, personal
+            digital assistants, a standard simulator and decision support systems, evaluation benchmarks for rescue
+            strategies and robotic systems that are all integrated into a comprehensive systems in future.
+        </p>
+
+    </article>
+
+    {% for post in posts.object_list %}
+
+        <article class="is-post is-post-excerpt">
+            <header>
+                <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+
+                {#                                    <h1 class="entry-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>#}
+                {##}
+                {#                                    <p class="meta">#}
+                {#                                        <time datetime="{{ post.created_at|date:"Y-m-d H:i:s O" }}" pubdate>{{ post.created_at }}</time>#}
+                {#                                    </p>#}
+                {#                                    {% if settings.DISQUS_SHORTNAME %}#}
+                {#                                        <p class="comment-count"><a href="{{ post.get_absolute_url }}#disqus_thread"#}
+                {#                                                                    rel="full-article"></a></p>#}
+                {#                                    {% endif %}#}
+            </header>
+            <div class="info">
+                <!--
+                    Note: The date should be formatted exactly as it's shown below. In particular, the
+                    "least significant" characters of the month should be encapsulated in a <span>
+                    element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+                    Oh, and if you don't need a date for a particular page or post you can simply delete
+                    the entire "date" element.
+
+                -->
+
+                    <span class="date">
+                        <span class="month">{{ post.get_Create_Month }}</span>
+                        <span class="day">{{ post.created_at.day }}</span>
+                        <span class="year">, 2014</span>
+                    </span>
+                <!--
+                    Note: You can change the number of list items in "stats" to whatever you want.
+                -->
+                <ul class="stats">
+                    <li><a href="#" class="link-icon24 link-icon24-1">16</a></li>
+                    <li><a href="#" class="link-icon24 link-icon24-2"
+                           onclick="location.href='http://v.t.sina.com.cn/share/share.php?title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href);return false;">20</a>
+                    </li>
+
+                    {#                    <li><a href="#" class="link-icon24 link-icon24-3">64</a></li>#}
+                    {#                    <li><a href="#" class="link-icon24 link-icon24-4">128</a></li>#}
+                </ul>
+            </div>
+
+            <div class="entry-content">{{ post.content|safe }}</div>
+            <br>
+            <br>
+
+            {#                            <footer>#}
+            {#                                <a rel="full-article" href="{{ post.get_absolute_url }}">Read On</a>#}
+            {#                            </footer>#}
+        </article>
+    {% endfor %}
+    {#    <nav role="pagination">#}
+    {#        <div>#}
+    {#            {% if posts.has_next %}#}
+    {#                <a class="prev" href="?page={{ posts.next_page_number }}">&larr; Older</a>#}
+    {#            {% endif %}#}
+    {#            <a href="/archives">Blog Archives</a>#}
+    {#            {% if posts.has_previous %}#}
+    {#                <a class="next" href="?page={{ posts.previous_page_number }}">Newer &rarr;</a>#}
+    {#            {% endif %}#}
+    {#        </div>#}
+    {#    </nav>#}
+    {#    </div>#}
+    {#    {% if settings.DISQUS_SHORTNAME %}#}
+    {#        <script type="text/javascript">#}
+    {#            var disqus_shortname = '{{ settings.DISQUS_SHORTNAME }}';#}
+    {#            (function () {#}
+    {#                var s = document.createElement('script');#}
+    {#                s.async = true;#}
+    {#                s.type = 'text/javascript';#}
+    {#                s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';#}
+    {#                (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);#}
+    {#            }());#}
+    {#        </script>#}
+    {#    {% endif %}#}
+    {#{% endblock %}#}
+    {##}
+    {#{% block sidebar %}#}
+    {#    {% get_recent_posts 5 %}#}
+    {#    {% get_top_tags 20 %}#}
+    {#    {% get_links 20 %}#}
 {% endblock %}

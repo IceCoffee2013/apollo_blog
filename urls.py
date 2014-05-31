@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT,}), # TODO 用nginx配置代替
     url('^about/$', 'views.about'),
+    url('^contact/$', 'views.contact'),
 
     #blog
     url(r'^post/(?P<pid>\d+)/', 'blog.views.show_post'),

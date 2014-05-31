@@ -1,18 +1,47 @@
-{% extends "base.html" %}
+{% extends "base1.html" %}
 {% load helper %}
 
 {% block title %}{{ page.title }} - {% endblock %}
 
 {% block content %}
+<br>
+<br>
+<br>
 <div>
 <article>
-  {% if page.title %}
-  <header>
-    <h1 class="entry-title">{{ page.title }}</h1>
-    {% if page.created_at %}<p class="meta"><time datetime="{{ page.created_at|date:"Y-m-d H:i:s O" }}" pubdate>{{ page.created_at }}</time></p>{% endif %}
-  </header>
-  {% endif %}
-  {% block main %}{{ page.content|safe }}{% endblock %}
+
+<article class="is-post is-post-excerpt">
+            {% if page.title %}
+            <header>
+                <h2><a href="{{ post.get_absolute_url }}">{{ page.title }}</a></h2>
+            </header>
+            {% endif %}
+            <div class="info">
+
+                    <span class="date">
+                        <span class="month">{{ page.get_Create_Month }}</span>
+                        <span class="day">{{ page.created_at.day }}</span>
+                        <span class="year">, 2014</span>
+                    </span>
+                <!--
+                    Note: You can change the number of list items in "stats" to whatever you want.
+                -->
+                <ul class="stats">
+                    <li><a href="#" class="link-icon24 link-icon24-1">16</a></li>
+                    <li><a href="#" class="link-icon24 link-icon24-2"
+                           onclick="location.href='http://v.t.sina.com.cn/share/share.php?title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href);return false;">20</a>
+                    </li>
+
+                    {#                    <li><a href="#" class="link-icon24 link-icon24-3">64</a></li>#}
+                    {#                    <li><a href="#" class="link-icon24 link-icon24-4">128</a></li>#}
+                </ul>
+            </div>
+
+            <div class="entry-content">{{ page.content|safe }}</div>
+            <br>
+            <br>
+
+        </article>
   {% if footer %}
     <footer>
 	  <p class="meta">
@@ -25,34 +54,33 @@
 			Share to 
 			<a href="http://twitter.com/share" class="twitter-share-button">Tweeter</a>
 			<a href="#" onclick="location.href='http://v.t.sina.com.cn/share/share.php?title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href);return false;">Weibo</a>
-			<a href="#" onclick="location.href='http://www.delicious.com/share?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);return false;">Delicious</a>
 		</div>
       {% endif %}
     </footer>
   {% endif %}
 </article>
-{% if comments %}
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread">
-      <div id="disqus_thread"></div>
-      <script type="text/javascript">
-        var disqus_shortname = '{{ settings.DISQUS_SHORTNAME }}';
-        //var disqus_developer = 1;
-        (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-  </section>
-{% endif %}
+{#{% if comments %}#}
+{#  <section>#}
+{#    <h1>Comments</h1>#}
+{#    <div id="disqus_thread">#}
+{#      <div id="disqus_thread"></div>#}
+{#      <script type="text/javascript">#}
+{#        var disqus_shortname = '{{ settings.DISQUS_SHORTNAME }}';#}
+{#        //var disqus_developer = 1;#}
+{#        (function() {#}
+{#          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;#}
+{#          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';#}
+{#          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);#}
+{#        })();#}
+{#      </script>#}
+{#      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>#}
+{#    </div>#}
+{#  </section>#}
+{#{% endif %}#}
 </div>
 {% endblock %}
 
-{% block sidebar %}
-  {% get_recent_posts 5 %}
-  {% get_top_tags 20 %}
-{% endblock %}
+{#{% block sidebar %}#}
+{#  {% get_recent_posts 5 %}#}
+{#  {% get_top_tags 20 %}#}
+{#{% endblock %}#}
