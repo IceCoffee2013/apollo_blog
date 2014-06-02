@@ -93,27 +93,27 @@
             </div>
         </div>
 
-
-         <script type="text/javascript">
-             jQuery(document).ready(function ($) {
-                 // Get current url
-                 // Select an a element that has the matching href and apply a class of 'active'. Also prepend a - to the content of the link
-                 var url = window.location.href;
-{#                 alert(url)#}
-                 // Absoulete Url
-                 //$('.menu a[href="' + url + '"]').addClass('current_page_item');
-{#                 $('.blog_nav_item a').filter( function () { return this.href == url; } ).addClass('better-active')​;#}
-
-                 $('.blog_nav a ').filter(
-                         function() {
-{#                            alert(url + "\n" +this.href)#}
+     <!-- count comments -->
+     {#         <script type="text/javascript">#}
+     {#             jQuery(document).ready(function ($) {#}
+     {#                 // Get current url#}
+     {#                 // Select an a element that has the matching href and apply a class of 'active'. Also prepend a - to the content of the link#}
+     {#                 var url = window.location.href;#}
+     {#                 alert(url)#}
+     {#                 // Absoulete Url#}
+     {#                 //$('.menu a[href="' + url + '"]').addClass('current_page_item');#}
+     {#                 $('.blog_nav_item a').filter( function () { return this.href == url; } ).addClass('better-active')​;#}
+     {##}
+     {#                 $('.blog_nav a ').filter(#}
+     {#                         function() {#}
+     {#                            alert(url + "\n" +this.href)#}
 {#                            alert(this.href == url)#}
-                            return this.href == url;
-                         }
-                 ).addClass('current_page_item');
-
-             })
-
-         </script>
+     {#                            return this.href == url;#}
+     {#                         }#}
+     {#                 ).addClass('current_page_item');#}
+     {##}
+     {#             })#}
+     {##}
+     {#         </script>#}
     </body>
 </html>

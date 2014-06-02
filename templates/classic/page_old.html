@@ -5,21 +5,25 @@
 
 {% block content %}
 
-{#     <link rel="stylesheet" href="{% static 'css/gfm.css' %}"/>#}
+    {#     <link rel="stylesheet" href="{% static 'css/gfm.css' %}"/>#}
     <link rel="stylesheet" href="{% static 'css/friendly.css' %}"/>
-        <div id="single_page">
+    <div id="single_page">
         {% autoescape off %}
-            <article >
+            <article>
                 {# about 数据对象 display 为方法#}
                 <div class="blog_post">
                     <header>
                         <p class="blog_post_meta">
-                            {% if page.created_at %}<p class="meta"><time datetime="{{ page.created_at|date:"Y-m-d H:i:s O" }}" pubdate>{{ page.created_at }}</time></p>{% endif %}
-{#                            <span class="year"> {{ blogpost.pub_date.year }}</span>#}
-{#                            <span class="month"> {{ blogpost.pub_date|date:"M" }}</span>#}
-{#                            <span class="day">{{ blogpost.pub_date.day }}</span>#}
+
+                        {% if page.created_at %}
+                            <p class="meta">
+                            <time datetime="{{ page.created_at|date:"Y-m-d H:i:s O" }}"
+                                  pubdate>{{ page.created_at }}</time></p>{% endif %}
+                        {#                            <span class="year"> {{ blogpost.pub_date.year }}</span>#}
+                        {#                            <span class="month"> {{ blogpost.pub_date|date:"M" }}</span>#}
+                        {#                            <span class="day">{{ blogpost.pub_date.day }}</span>#}
                         </p>
-                        <h1><a class="blog_post_title" href="{{ page.get_absolute_url }}"> {{ page.title }} </a> </h1>
+                        <h1><a class="blog_post_title" href="{{ page.get_absolute_url }}"> {{ page.title }} </a></h1>
                     </header>
                     <div class="blog_post_content">
                         {{ page.content }}
@@ -28,13 +32,13 @@
                     <div class="blog_post_tag">
                         <img src="{% static 'images/tag.png' %}" class="tag_img" height=30px alt=""/>
                         {% for tag in tags %}
-                        <ul class="blog_post_tag_list">
-                            <a href="">
-                                <li class="tag_item">
-                                    {{ tag }}
-                                 </li>
-                            </a>
-                        </ul>
+                            <ul class="blog_post_tag_list">
+                                <a href="">
+                                    <li class="tag_item">
+                                        {{ tag }}
+                                    </li>
+                                </a>
+                            </ul>
                         {% endfor %}
                     </div>
                     <!-- TODO 版权申明-->
@@ -65,6 +69,6 @@
                 </div>
             </article>
         {% endautoescape %}
-        </div>
+    </div>
 
 {% endblock content %}

@@ -48,7 +48,7 @@ GA_ID = 'UA-15372596-1'
 CSE_ID = '017823656936221718810:8oexw_fkbz0'
 
 # disqus 评论 id
-DISQUS_SHORTNAME = 'apollo\'s blog'
+DISQUS_SHORTNAME = 'apollorescue'
 
 
 #### 以下配置不要改动 ####
