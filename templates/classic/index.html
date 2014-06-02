@@ -33,7 +33,9 @@
             -->
             <ul class="stats">
                 <li><a href="#" class="link-icon24 link-icon24-1">16</a></li>
-                <li><a href="#" class="link-icon24 link-icon24-2">32</a></li>
+                <li><a href="#" class="link-icon24 link-icon24-2"
+                       onclick="location.href='http://v.t.sina.com.cn/share/share.php?title='+encodeURIComponent('Welcome to Apollo-Rescue')+'&url='+encodeURIComponent(location.href);return false;">20</a>
+                </li>
                 {#                <li><a href="#" class="link-icon24 link-icon24-3">64</a></li>#}
                 {#                <li><a href="#" class="link-icon24 link-icon24-4">128</a></li>#}
             </ul>
@@ -91,7 +93,7 @@
                     <li><a href="{{ post.get_absolute_url }}#disqus_thread" class="link-icon24 link-icon24-1">16</a>
                     </li>
                     <li><a href="#" class="link-icon24 link-icon24-2"
-                           onclick="location.href='http://v.t.sina.com.cn/share/share.php?title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href);return false;">20</a>
+                           onclick="location.href='http://v.t.sina.com.cn/share/share.php?title='+encodeURIComponent('{{ post.title }}')+'&url='+encodeURIComponent(location.href);return false;">20</a>
                     </li>
 
                     {#                    <li><a href="#" class="link-icon24 link-icon24-3">64</a></li>#}
