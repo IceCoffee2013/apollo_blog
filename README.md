@@ -3,7 +3,7 @@ apollo_blog
 ======
 采用 `Django + MySQL`搭建，博客内容采用markdown
 
-### 最近
+### ADD
 * 更换了UI，支持移动终端
 * 加入Comment，由DISQUS提供
 
