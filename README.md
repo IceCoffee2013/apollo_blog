@@ -1,7 +1,8 @@
 
 apollo_blog
 ======
-采用 `Django + MySQL`搭建，博客内容采用markdown
+* 采用 `Django + MySQL`搭建，博客内容采用markdown
+* demo: http://apollo.icecoffee.cn/
 
 ### ADD
 * 更换了UI，支持移动终端
