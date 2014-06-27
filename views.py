@@ -10,6 +10,7 @@ from blog.models import Post, Page
 
 
 
+
 # reload(sys)
 # sys.setdefaultencoding( "utf-8" )
 
@@ -83,6 +84,11 @@ def about(request):
     # args = {"about": the_about_post}
     # # return render(request, '../templates/about.html', args)
     return render_to_response('about.html', {})
+
+
+def aliyun(request):
+    return render_to_response('aliyun_verify_3c2a8c9eb497880e48d0569136c03476.html', {})
+
 
 def contact(request):
     return render_to_response('contact.html', {})

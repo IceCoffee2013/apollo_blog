@@ -21,6 +21,7 @@ urlpatterns = patterns('',
                            {'document_root': settings.MEDIA_ROOT, }),  # TODO 用nginx配置代替
                        url('^contact/$', 'views.contact'),
                        url('^about/$', 'views.about'),
+                       url('^aliyun/$', 'views.aliyun'),
 
                        # blog
                        url(r'^post/(?P<pid>\d+)/', 'blog.views.show_post'),
