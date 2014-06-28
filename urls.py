@@ -15,6 +15,7 @@ urlpatterns = patterns('',
                        # Examples:
                        # url(r'^blog/', include('blog.urls')),
                        url(r'^$', 'views.home'),
+                       url(r'^aliyun_verify_3c2a8c9eb497880e48d0569136c03476.html/$', 'views.aliyun'),
                        url(r'^archives/$', 'views.archives'),
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
