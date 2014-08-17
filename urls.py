@@ -15,15 +15,13 @@ urlpatterns = patterns('',
                        # Examples:
                        # url(r'^blog/', include('blog.urls')),
                        url(r'^$', 'views.home'),
-                       url(r'^aliyun_verify_3c2a8c9eb497880e48d0569136c03476.html/$', 'views.aliyun'),
+                       # url(r'^aliyun_verify_3c2a8c9eb497880e48d0569136c03476.html/$', 'views.aliyun'),
                        url(r'^archives/$', 'views.archives'),
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
                            {'document_root': settings.MEDIA_ROOT, }),  # TODO 用nginx配置代替
                        url('^contact/$', 'views.contact'),
                        url('^about/$', 'views.about'),
-                       url(r'^aliyun_verify_31d1ed977a7e1ff4f038711801722b07.html/$', 'views.aliyun1'),
-                       url(r'^aliyun_verify_4e2c22d6893dd289f79a7cb4723ea72a.html/$', 'views.aliyun2'),
 
                        # blog
                        url(r'^post/(?P<pid>\d+)/', 'blog.views.show_post'),

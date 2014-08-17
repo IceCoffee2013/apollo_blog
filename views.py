@@ -12,6 +12,7 @@ from blog.models import Post, Page
 
 
 
+
 # reload(sys)
 # sys.setdefaultencoding( "utf-8" )
 
@@ -87,16 +88,8 @@ def about(request):
     return render_to_response('about.html', {})
 
 
-def aliyun(request):
-    return render_to_response('aliyun_verify_3c2a8c9eb497880e48d0569136c03476.html', {})
-
-
-def aliyun1(request):
-    return render_to_response('aliyun_verify_31d1ed977a7e1ff4f038711801722b07.html', {})
-
-
-def aliyun2(request):
-    return render_to_response('aliyun_verify_4e2c22d6893dd289f79a7cb4723ea72a.html', {})
+# def aliyun(request):
+# return render_to_response('aliyun_verify_3c2a8c9eb497880e48d0569136c03476.html', {})
 
 
 def contact(request):
