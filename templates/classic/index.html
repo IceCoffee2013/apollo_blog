@@ -119,12 +119,13 @@
     {% if posts.has_next or posts.has_previous %}
         <div class="pagination">
             <div class="moreinfo">
-                {% if posts.has_next %}
-                    <a href='{% url "index" posts.next_page_number %}'>&laquo; Previous </a>
-                {% endif %}
+
                 {% if posts.has_previous %}
-                    <span class='right'><a href='{% url "index" posts.previous_page_number %}'>Next
-                        &raquo;</a></span>
+                    <a href='{% url "index" posts.previous_page_number %}'>
+                        &laquo; Previous</a>
+                {% endif %}
+                {% if posts.has_next %}
+                    <span class='right'><a href='{% url "index" posts.next_page_number %}'>Next &raquo;</a></span>
                 {% endif %}
             </div>
         </div>
