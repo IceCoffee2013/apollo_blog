@@ -13,6 +13,7 @@ from blog.models import Post, Page
 
 
 
+
 # reload(sys)
 # sys.setdefaultencoding( "utf-8" )
 
@@ -27,6 +28,21 @@ def home(request):
     'index': True,
     'keywords': settings.SITE_DESC,
     'posts': utils.get_page(Post.objects.all(), page),
+    }, context_instance=RequestContext(request))
+
+
+def index(request, page=1):
+    '''首页 with page add'''
+    # try:
+    # page = int(request.GET.get('page', '1'))
+    # except ValueError:
+    #     page = 1
+    page = int(page)
+
+    return render_to_response('index.html', {
+        'index': True,
+        'keywords': settings.SITE_DESC,
+        'posts': utils.get_page(Post.objects.all(), page),
     }, context_instance=RequestContext(request))
 
 

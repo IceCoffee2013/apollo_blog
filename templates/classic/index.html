@@ -111,27 +111,25 @@
             {#                            </footer>#}
         </article>
 
-        <!-- comment -->
-        {#        <div id="{{ post.get_absolute_url }}#disqus_thread"></div>#}
-        {#        <script type="text/javascript">#}
-        {#            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */#}
-        {#            var disqus_shortname = '{{ settings.DISQUS_SHORTNAME }}'; // required: replace example with your forum shortname#}
-        {##}
-        {#            /* * * DON'T EDIT BELOW THIS LINE * * */#}
-        {#            (function () {#}
-        {#                var dsq = document.createElement('script');#}
-        {#                dsq.type = 'text/javascript';#}
-        {#                dsq.async = true;#}
-        {#                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';#}
-        {#                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);#}
-        {#            })();#}
-        {#        </script>#}
-        {#        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by#}
-        {#            Disqus.</a></noscript>#}
-        {#        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>#}
-
-
     {% endfor %}
+
+
+    <!--BLOG POST ENDS-->
+    <div class="clear"></div>
+    {% if posts.has_next or posts.has_previous %}
+        <div class="pagination">
+            <div class="moreinfo">
+                {% if posts.has_next %}
+                    <a href='{% url "index" posts.next_page_number %}'>&laquo; Previous </a>
+                {% endif %}
+                {% if posts.has_previous %}
+                    <span class='right'><a href='{% url "index" posts.previous_page_number %}'>Next
+                        &raquo;</a></span>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
     {#    <nav role="pagination">#}
     {#        <div>#}
     {#            {% if posts.has_next %}#}

@@ -638,3 +638,13 @@ ol.style1 li {
     word-wrap: break-word; /*支持IE，chrome，FF*/
 
 }
+
+.moreinfo {
+    font-family: 'Droid Serif', arial, serif;
+    font-size: 12px;
+    font-style: italic;
+    color: #962000;
+    line-height: 20px;
+    float: right;
+}
+
