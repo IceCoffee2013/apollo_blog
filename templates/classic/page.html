@@ -3,7 +3,7 @@
 
 {% block title %}{{ page.title }} - {% endblock %}
 
-<html xmlns:wb=“http://open.weibo.com/wb”>
+<html>
 {% block content %}
     <br>
     <br>
@@ -53,31 +53,44 @@
                             {% for i in tags %}<a class="category" href="{{ i.get_absolute_url }}">{{ i.name }}</a>
                             {% endfor %}{% endif %}
                     </p>
-                    {% if sharing %}
-                        <div class="sharing">
-                            Share to
-                            <a href="http://twitter.com/share" class="twitter-share-button">Tweeter</a>
-                            <a href="#"
-                               onclick="location.href='http://v.t.sina.com.cn/share/share.php?title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href);return false;">Weibo</a>
-                            <wb:share-button appkey="2D7Wtq" addition="simple" type="button"
-                                             ralateUid="2546946082"></wb:share-button>
-                            <!-- renren -->
-                            <script type="text/javascript" src="http://widget.renren.com/js/rrshare.js"></script>
-                            <a name="xn_share" onclick="shareClick()" type="button_medium" href="javascript:;"></a>
-                            <script type="text/javascript">
-                                function shareClick() {
-                                    var rrShareParam = {
-                                        resourceUrl: '',	//分享的资源Url
-                                        srcUrl: '',	//分享的资源来源Url,默认为header中的Referer,如果分享失败可以调整此值为resourceUrl试试
-                                        pic: '',		//分享的主题图片Url
-                                        title: '',		//分享的标题
-                                        description: ''	//分享的详细描述
-                                    };
-                                    rrShareOnclick(rrShareParam);
-                                }
-                            </script>
-                        </div>
-                    {% endif %}
+                    <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#"
+                                                                                                      class="bds_qzone"
+                                                                                                      data-cmd="qzone"></a><a
+                            href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq"
+                                                                               data-cmd="tqq"></a><a href="#"
+                                                                                                     class="bds_renren"
+                                                                                                     data-cmd="renren"></a><a
+                            href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+
+                    <!-- baidu share -->
+                    <script>window._bd_share_config = {"common": {"bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdPic": "", "bdStyle": "0", "bdSize": "16"}, "share": {}, "image": {"viewList": ["qzone", "tsina", "tqq", "renren", "weixin"], "viewText": "分享到：", "viewSize": "16"}, "selectShare": {"bdContainerClass": null, "bdSelectMiniList": ["qzone", "tsina", "tqq", "renren", "weixin"]}};
+                    with (document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+
+                    {#                    {% if sharing %}#}
+                    {#                        <div class="sharing">#}
+                    {#                            Share to#}
+                    {#                            <a href="http://twitter.com/share" class="twitter-share-button">Tweeter</a>#}
+                    {#                            <a href="#"#}
+                    {#                               onclick="location.href='http://v.t.sina.com.cn/share/share.php?title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href);return false;">Weibo</a>#}
+                    {#                            <wb:share-button appkey="2D7Wtq" addition="simple" type="button"#}
+                    {#                                             ralateUid="2546946082"></wb:share-button>#}
+                    {#                            <!-- renren -->#}
+                    {#                            <script type="text/javascript" src="http://widget.renren.com/js/rrshare.js"></script>#}
+                    {#                            <a name="xn_share" onclick="shareClick()" type="button_medium" href="javascript:;"></a>#}
+                    {#                            <script type="text/javascript">#}
+                    {#                                function shareClick() {#}
+                    {#                                    var rrShareParam = {#}
+                    {#                                        resourceUrl: '',	//分享的资源Url#}
+                    {#                                        srcUrl: '',	//分享的资源来源Url,默认为header中的Referer,如果分享失败可以调整此值为resourceUrl试试#}
+                    {#                                        pic: '',		//分享的主题图片Url#}
+                    {#                                        title: '',		//分享的标题#}
+                    {#                                        description: ''	//分享的详细描述#}
+                    {#                                    };#}
+                    {#                                    rrShareOnclick(rrShareParam);#}
+                    {#                                }#}
+                    {#                            </script>#}
+                    {#                        </div>#}
+                    {#                    {% endif %}#}
                 </footer>
             {% endif %}
         </article>
